@@ -19,7 +19,7 @@ Just open the heroku page and add an exercise. You can view the workouts from th
 
 [Github](https://github.com/andrewtrudeau/18-Workout-Tracker)
 
-[Heroku](https://hw14-tech-blog-at.herokuapp.com/)
+[Heroku](https://hw18-homework-fitness-tracker.herokuapp.com/)
 
 ## Contact
 
