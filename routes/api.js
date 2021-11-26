@@ -4,7 +4,12 @@ const Exercise = require("../models/exercise.js");
 
 router.get("/api/workouts/range", (req, res) => {
   Workout.aggregate([
-    { $addFields: { totalDuration: { $sum: "$exercises.duration" } } },
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration" },
+        totalDistance: { $sum: "$exercises.distance" }
+      }
+    },
   ])
     .sort({ day: -1 }).limit(7)
     .then(dbWorkout => {
@@ -17,7 +22,12 @@ router.get("/api/workouts/range", (req, res) => {
 
 router.get("/api/workouts", (req, res) => {
   Workout.aggregate([
-    { $addFields: { totalDuration: { $sum: "$exercises.duration" } } },
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration" },
+        totalDistance: { $sum: "$exercises.distance" }
+      }
+    },
   ])
     .sort({ day: -1 }).limit(1)
     .then(dbWorkout => {
